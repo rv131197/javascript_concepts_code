@@ -35,10 +35,29 @@ arr = [1,2,3,4,5]
 Array.prototype.myMap = function(callback){
     const result = [];
     for(let i = 0; i< this.length; i++){
+      if (this.indexOf(this[index]) > -1) {
       result.push(callback(this[i]))
+      }
     }
     return result
 }
 
 console.log(arr.myMap(ele => ele*2))
 console.log(arr.map(ele => ele*2))
+
+// polyfill for filter
+
+arr1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+console.log(arr1.filter(ele => ele%2 != 0))
+
+Array.prototype.myFilter = function(callback){
+  let result = []
+  for(let i = 0; i<this.length; i++){
+    if(callback(this[i])){
+      result.push(this[i])
+    }
+  }
+  return result
+}
+
+console.log(arr1.myFilter(ele => ele%2 != 0))
