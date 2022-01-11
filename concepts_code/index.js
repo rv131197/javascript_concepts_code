@@ -26,3 +26,19 @@ Function.prototype.myBind = function(...args){
 }
 printName2 = printName.myBind(name1, "12")
 printName2("Karnataka");
+
+// polyfill for map
+
+arr = [1,2,3,4,5]
+
+
+Array.prototype.myMap = function(callback){
+    const result = [];
+    for(let i = 0; i< this.length; i++){
+      result.push(callback(this[i]))
+    }
+    return result
+}
+
+console.log(arr.myMap(ele => ele*2))
+console.log(arr.map(ele => ele*2))
