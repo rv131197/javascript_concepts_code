@@ -1,73 +1,73 @@
-// function job() {
-//     return new Promise(function(resolve, reject) {
-//         reject();
-//     });
-// }
+function job() {
+    return new Promise(function(resolve, reject) {
+        reject();
+    });
+}
 
-// let promise = job();
+let promise = job();
 
-// promise
+promise
 
-// .then(function() {
-//     console.log('Success 1');
-// })
+.then(function() {
+    console.log('Success 1');
+})
 
-// .then(function() {
-//     console.log('Success 2');
-// })
+.then(function() {
+    console.log('Success 2');
+})
 
-// .then(function() {
-//     console.log('Success 3');
-// })
+.then(function() {
+    console.log('Success 3');
+})
 
-// .catch(function() {
-//     console.log('Error 1');
-// })
+.catch(function() {
+    console.log('Error 1');
+})
 
-// .then(function() {
-//     console.log('Success 4');
-// });
+.then(function() {
+    console.log('Success 4');
+});
 
-// // Output
+// Output
 
-// // Error 1
-// // Success 4
+// Error 1
+// Success 4
 
-// function job(state) {
-//     return new Promise(function(resolve, reject) {
-//         if (state) {
-//             resolve('success');
-//         } else {
-//             reject('error');
-//         }
-//     });
-// }
+function job(state) {
+    return new Promise(function(resolve, reject) {
+        if (state) {
+            resolve('success');
+        } else {
+            reject('error');
+        }
+    });
+}
 
-// let promise = job(true);
+let promise = job(true);
 
-// promise
+promise
 
-// .then(function(data) {
-//     console.log(data);
+.then(function(data) {
+    console.log(data);
 
-//     return job(false);
-// })
+    return job(false);
+})
 
-// .catch(function(error) {
-//     console.log(error);
+.catch(function(error) {
+    console.log(error);
 
-//     return 'Error caught';
-// })
+    return 'Error caught';
+})
 
-// .then(function(data) {
-//     console.log(data);
+.then(function(data) {
+    console.log(data);
 
-//     return job(true);
-// })
+    return job(true);
+})
 
-// .catch(function(error) {
-//     console.log(error);
-// });
+.catch(function(error) {
+    console.log(error);
+});
 
 // Output
 
