@@ -35,7 +35,7 @@ arr = [1,2,3,4,5]
 Array.prototype.myMap = function(callback){
     const result = [];
     for(let i = 0; i< this.length; i++){
-      if (this.indexOf(this[index]) > -1) {
+      if (this.indexOf(this[i]) > -1) {
       result.push(callback(this[i]))
       }
     }
@@ -61,3 +61,21 @@ Array.prototype.myFilter = function(callback){
 }
 
 console.log(arr1.myFilter(ele => ele%2 != 0))
+
+// Polyfill for reduce
+
+arr2 = [1,2,3,4,5,6,7]
+console.log(arr2.reduce((acc,curr) => {
+  return acc+=curr
+}))
+
+Array.prototype.myReduce = function(callback){
+  let sum = 0;
+  for(let i =0;i<this.length;i++){
+     callback(...sum, this[i])
+  }
+}
+
+console.log(arr2.myReduce((acc,curr) => {
+  return acc+=curr
+}))
